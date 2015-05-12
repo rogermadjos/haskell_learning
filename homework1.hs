@@ -9,11 +9,7 @@ toDigitsRev = reverse . toDigits
 
 -- Excercise 2
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther [] = []
-doubleEveryOther [x] = [x]
-doubleEveryOther xs = (doubleEveryOther . take (len - 2)) xs ++ [secondLast * 2] ++ [last xs]
-  where len = length xs
-        secondLast = xs !! (len - 2)
+doubleEveryOther x = reverse $ zipWith (*) (reverse x) (cycle [1,2])
 
 -- Excercise 3
 sumDigits :: [Integer] -> Integer
